@@ -50,12 +50,7 @@ const CustomNodeFlow = () => {
       );
     };
 
-    const onClickFt = (event) => {
-      console.log("onClick");
-      setDialogOpen(true);
-      setElements();
-    };
-
+    
     setElements([
       {
         id: "1",
@@ -156,6 +151,13 @@ const CustomNodeFlow = () => {
       }
     },
     [reactflowInstance]
+  );
+
+  const onClickFt = useCallback((event) => {
+    setDialogOpen(true);
+    setElements((els) =>
+      els.map((e) => { return e} ) 
+    )}, []
   );
 
   // const onClickElementDelete = useCallback(() => {
